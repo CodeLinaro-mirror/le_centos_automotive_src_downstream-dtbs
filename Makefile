@@ -7,7 +7,7 @@ HOSTCC = clang
 else
 HOSTCC = gcc
 endif
-DTC = dtc
+DTC = $(KERNEL_SRC)/scripts/dtc/dtc
 DTC_INCLUDE := include $(KERNEL_SRC)/include
 DTC_FLAGS += -Wno-interrupt_provider -Wno-unit_address_vs_reg -Wno-unique_unit_address
 dtc_cpp_flags = -nostdinc $(addprefix -I,$(dir $<) $(DTC_INCLUDE)) -undef -D__DTS__
