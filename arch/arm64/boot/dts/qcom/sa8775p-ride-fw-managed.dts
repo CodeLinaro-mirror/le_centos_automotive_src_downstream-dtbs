@@ -71,13 +71,12 @@
 /delete-node/ &spmi_bus;
 /delete-node/ &qup_opp_table_100mhz;
 /delete-node/ &ufs_mem_phy;
+/delete-node/ &ice;
 /delete-node/ &serdes0;
 /delete-node/ &serdes1;
 
 /* deleting nodes not yet migrated to fw-managed variant */
 
-/delete-node/ &pcie0_ep;
-/delete-node/ &pcie1_ep;
 /delete-node/ &pcie0_phy;
 /delete-node/ &pcie1_phy;
 
@@ -166,6 +165,8 @@
 	/delete-property/ clock-names;
 	/delete-property/ phys;
 	/delete-property/ phy-names;
+	/delete-property/ interconnects;
+	/delete-property/ interconnects-names;
 
 	power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>,<&scmi7_dvfs 0>;
 	power-domain-names = "power_core", "power_mdio","perf_serdes";
@@ -274,6 +275,8 @@
 	/delete-property/ clock-names;
 	/delete-property/ phys;
 	/delete-property/ phy-names;
+	/delete-property/ interconnects;
+	/delete-property/ interconnects-names;
 
 	power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>,<&scmi8_dvfs 0>;
 	power-domain-names = "power_core", "power_mdio","perf_serdes";
@@ -1045,6 +1048,7 @@
 	/delete-property/ reset-names;
 	/delete-property/ required-opps;
 	/delete-property/ freq-table-hz;
+	/delete-property/ qcom,ice;
 
 	qcom,firmware-managed-resources;
 	reset-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
