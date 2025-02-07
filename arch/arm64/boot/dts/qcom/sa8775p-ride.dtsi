@@ -12,9 +12,6 @@
 #include "sa8775p-pmics.dtsi"
 
 / {
-	model = "Qualcomm SA8775P Ride";
-	compatible = "qcom,sa8775p-ride", "qcom,sa8775p";
-
 	aliases {
 		ethernet0 = &ethernet0;
 		ethernet1 = &ethernet1;
@@ -264,7 +261,6 @@
 };
 
 &ethernet0 {
-	phy-mode = "sgmii";
 	phy-handle = <&sgmii_phy0>;
 
 	pinctrl-0 = <&ethernet0_default>;
@@ -276,28 +272,10 @@
 
 	status = "okay";
 
-	mdio {
+	mdio: mdio {
 		compatible = "snps,dwmac-mdio";
 		#address-cells = <1>;
 		#size-cells = <0>;
-
-		sgmii_phy0: phy@8 {
-			compatible = "ethernet-phy-id0141.0dd4";
-			reg = <0x8>;
-			device_type = "ethernet-phy";
-			reset-gpios = <&pmm8654au_2_gpios 8 GPIO_ACTIVE_LOW>;
-			reset-assert-us = <11000>;
-			reset-deassert-us = <70000>;
-		};
-
-		sgmii_phy1: phy@a {
-			compatible = "ethernet-phy-id0141.0dd4";
-			reg = <0xa>;
-			device_type = "ethernet-phy";
-			reset-gpios = <&pmm8654au_2_gpios 9 GPIO_ACTIVE_LOW>;
-			reset-assert-us = <11000>;
-			reset-deassert-us = <70000>;
-		};
 	};
 
 	mtl_rx_setup: rx-queues-config {
@@ -361,7 +339,6 @@
 };
 
 &ethernet1 {
-	phy-mode = "sgmii";
 	phy-handle = <&sgmii_phy1>;
 
 	snps,mtl-rx-config = <&mtl_rx_setup1>;
@@ -457,6 +434,11 @@
 			  "CAM_DES3_EN",
 			  "UEFI",
 			  "ANALOG_PON_OPT";
+};
+
+&pmm8654au_0_pon_resin {
+	linux,code = <KEY_VOLUMEDOWN>;
+	status = "okay";
 };
 
 &pmm8654au_1_gpios {
