@@ -22,6 +22,7 @@ dtstree := arch/$(ARCH)/boot/dts
 
 ifeq ($(ARCH),arm64)
 dtb-y += qcom/sa8775p-ride-fw-managed.dtb
+dtb-y += qcom/sa8255p-ride.dtb
 endif
 
 PHONY += dtbs
