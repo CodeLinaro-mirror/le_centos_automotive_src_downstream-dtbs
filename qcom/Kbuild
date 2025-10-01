@@ -1,2 +1,11 @@
 dtb-y += sa8775p-ride-fw-managed.dtb
-dtb-y += sa8255p-ride.dtb
+
+sa8775p-ride-scmi-dtbs := \
+	sa8255p-ride.dtb \
+	sa8775p_overlay.dtbo
+dtb-y += sa8775p-ride-scmi.dtb
+
+sa8775p-ride-v3-scmi-dtbs := \
+	sa8255p-ride.dtb \
+	sa8775p-v3_overlay.dtbo
+dtb-y += sa8775p-ride-v3-scmi.dtb
