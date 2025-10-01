@@ -1,2 +1,7 @@
+*.cmd
 *.dtb
+*.dtbo
 *.dtb.tmp
+*.symvers
+*.tmp
+modules.order
