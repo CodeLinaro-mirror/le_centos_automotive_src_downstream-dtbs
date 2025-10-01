@@ -1,0 +1,2 @@
+dtb-y += sa8775p-ride-fw-managed.dtb
+dtb-y += sa8255p-ride.dtb

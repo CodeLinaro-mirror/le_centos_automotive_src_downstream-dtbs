@@ -1,47 +1,27 @@
+ifneq ($(KERNELRELEASE),)
+# kbuild part of makefile
+include Kbuild
+
+else
+# regular makefile
 KERNEL_VERSION ?= $(shell uname -r)
 KERNEL_SRC ?= /lib/modules/$(KERNEL_VERSION)/build
-ARCH ?= $(shell uname -m | sed -e s/aarch64.*/arm64/)
 
+# This trick is only required for cs9 that still has dtb handled in
+# Makefile.lib and won't handle includes and local out-of-tree overrides.
+HOSTCC_FLAGS = -I $$PWD/include
 ifneq ($(LLVM),)
-HOSTCC = clang
+HOSTCC	= clang $(HOSTCC_FLAGS)
 else
-HOSTCC = gcc
-endif
-DTC = $(KERNEL_SRC)/scripts/dtc/dtc
-DTC_INCLUDE := include $(KERNEL_SRC)/include
-DTC_FLAGS += -Wno-interrupt_provider -Wno-unit_address_vs_reg -Wno-unique_unit_address
-dtc_cpp_flags = -nostdinc $(addprefix -I,$(dir $<) $(DTC_INCLUDE)) -undef -D__DTS__
-
-%.dts.tmp: %.dts
-	$(HOSTCC) -E $(dtc_cpp_flags) -x assembler-with-cpp -o $@ $<
-
-%.dtb: %.dts.tmp
-	$(DTC) -o $@ -b 0 $(addprefix -i,$(DTC_INCLUDE)) $(DTC_FLAGS) $<
-
-dtstree := arch/$(ARCH)/boot/dts
-
-ifeq ($(ARCH),arm64)
-dtb-y += qcom/sa8775p-ride-fw-managed.dtb
-dtb-y += qcom/sa8255p-ride.dtb
+HOSTCC	= gcc $(HOSTCC_FLAGS)
 endif
 
-PHONY += dtbs
-dtbs:
-	$(if $(dtb-y),$(MAKE) $(addprefix $(dtstree)/,$(dtb-y)))
+.PHONY: default clean
 
-INSTALL_PATH ?= /boot
-INSTALL_DTBS_PATH ?= $(INSTALL_PATH)/dtbs/$(KERNEL_VERSION)
+default:
+	$(MAKE) HOSTCC="$(HOSTCC) -I$$PWD/include" -C $(KERNEL_SRC) M=$$PWD
 
-define gen_install_rules
-$(INSTALL_DTBS_PATH)/$(1): $(addprefix $(dtstree)/,$(1))
-	install -D -m 644 $$< $$@
-endef
-$(foreach d,$(dtb-y),$(eval $(call gen_install_rules,$(d))))
-
-PHONY += dtbs_install
-dtbs_install: $(addprefix $(INSTALL_DTBS_PATH)/,$(dtb-y))
-
-PHONY += clean
 clean:
-	rm -rf $(addprefix $(dtstree)/,$(dtb-y)) \
-		$(addsuffix .tmp, $(addprefix $(dtstree)/,$(dtb-y:.dtb=.dts)))
+	$(MAKE) -C $(KERNEL_SRC) M=$$PWD clean
+
+endif
