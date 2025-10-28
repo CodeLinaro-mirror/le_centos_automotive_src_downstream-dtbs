@@ -130,7 +130,6 @@
 
 		iommus = <&adreno_smmu 0x407 0xc00>;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	gemnoc@9100000 {
@@ -1057,7 +1056,6 @@
 		iommus = <&adreno_smmu 0x0 0xc00>;
 		qcom,iommu-dma = "disabled";
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_gmu {
@@ -1068,7 +1066,6 @@
 		iommus = <&adreno_smmu 0x5 0xc00>;
 		qcom,iommu-dma = "disabled";
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_gmu_db {
@@ -1077,7 +1074,6 @@
 		iommus = <&adreno_smmu 0x4 0xc00>;
 		qcom,iommu-dma = "disabled";
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_kgsl_secure {
@@ -1089,7 +1085,6 @@
 		qcom,secure-context-bank;
 		qcom,iommu-dma = "disabled";
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_kgsl_lpac {
@@ -1098,7 +1093,6 @@
 		iommus = <&adreno_smmu 0x1 0xc00>;
 		qcom,iommu-dma = "disabled";
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_vidc@aa00000 {
