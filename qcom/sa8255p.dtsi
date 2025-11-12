@@ -212,7 +212,7 @@
 	};
 
 	firmware: firmware {
-		scm {
+		qcom_scm {
 			compatible = "qcom,scm-sa8255p", "qcom,scm";
 			memory-region = <&tz_ffi_mem>;
 			qcom,dload-mode = <&tcsr 0x13000>;
