@@ -958,7 +958,7 @@
 			};
 
 			uart10: serial@a8c000 {
-				compatible = "qcom,sa8255p-geni-debug-uart";
+				compatible = "qcom,sa8255p-geni-debug-uart", "qcom,geni-debug-uart";
 				reg = <0x0 0x00a8c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 				status = "disabled";
