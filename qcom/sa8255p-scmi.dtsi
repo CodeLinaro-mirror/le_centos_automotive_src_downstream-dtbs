@@ -19,6 +19,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi0_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -47,6 +51,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi1_pd: protocol@11 {
 			reg = <0x11>;
@@ -77,6 +85,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi2_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -105,6 +117,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi3_pd: protocol@11 {
 			reg = <0x11>;
@@ -135,6 +151,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi4_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -163,6 +183,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi5_pd: protocol@11 {
 			reg = <0x11>;
@@ -193,6 +217,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi6_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -221,6 +249,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi7_pd: protocol@11 {
 			reg = <0x11>;
@@ -251,6 +283,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi8_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -279,6 +315,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi9_pd: protocol@11 {
 			reg = <0x11>;
@@ -309,6 +349,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi10_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -337,6 +381,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi11_pd: protocol@11 {
 			reg = <0x11>;
@@ -367,6 +415,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi12_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -395,6 +447,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi13_pd: protocol@11 {
 			reg = <0x11>;
@@ -425,6 +481,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi14_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -453,6 +513,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi15_pd: protocol@11 {
 			reg = <0x11>;
@@ -483,6 +547,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi16_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -511,6 +579,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi17_pd: protocol@11 {
 			reg = <0x11>;
@@ -541,6 +613,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi18_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -569,6 +645,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi19_pd: protocol@11 {
 			reg = <0x11>;
@@ -599,6 +679,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi20_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -627,6 +711,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi21_pd: protocol@11 {
 			reg = <0x11>;
@@ -657,6 +745,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi22_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -686,6 +778,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi23_sensor: protocol@15 {
 			reg = <0x15>;
 			#thermal-sensor-cells = <1>;
@@ -704,6 +800,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi24_pd: protocol@11 {
 			reg = <0x11>;
@@ -734,6 +834,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi25_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -762,6 +866,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi26_pd: protocol@11 {
 			reg = <0x11>;
@@ -792,6 +900,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi27_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -820,6 +932,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi28_pd: protocol@11 {
 			reg = <0x11>;
@@ -850,6 +966,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi29_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -878,6 +998,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi30_pd: protocol@11 {
 			reg = <0x11>;
@@ -908,6 +1032,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi31_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -936,6 +1064,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi32_pd: protocol@11 {
 			reg = <0x11>;
@@ -966,6 +1098,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi33_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -994,6 +1130,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi34_pd: protocol@11 {
 			reg = <0x11>;
@@ -1024,6 +1164,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi35_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1052,6 +1196,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi36_pd: protocol@11 {
 			reg = <0x11>;
@@ -1082,6 +1230,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi37_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1110,6 +1262,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi38_pd: protocol@11 {
 			reg = <0x11>;
@@ -1140,6 +1296,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi39_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1168,6 +1328,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi40_pd: protocol@11 {
 			reg = <0x11>;
@@ -1198,6 +1362,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi41_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1226,6 +1394,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi42_pd: protocol@11 {
 			reg = <0x11>;
@@ -1256,6 +1428,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi43_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1284,6 +1460,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi44_pd: protocol@11 {
 			reg = <0x11>;
@@ -1314,6 +1494,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi45_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1342,6 +1526,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi46_pd: protocol@11 {
 			reg = <0x11>;
@@ -1372,6 +1560,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi47_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1400,6 +1592,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi48_pd: protocol@11 {
 			reg = <0x11>;
@@ -1430,6 +1626,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi49_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1458,6 +1658,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi50_pd: protocol@11 {
 			reg = <0x11>;
@@ -1488,6 +1692,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi51_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1516,6 +1724,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi52_pd: protocol@11 {
 			reg = <0x11>;
@@ -1546,6 +1758,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi53_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1574,6 +1790,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi54_pd: protocol@11 {
 			reg = <0x11>;
@@ -1604,6 +1824,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi55_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1632,6 +1856,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi56_pd: protocol@11 {
 			reg = <0x11>;
@@ -1662,6 +1890,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi57_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1690,6 +1922,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi58_pd: protocol@11 {
 			reg = <0x11>;
@@ -1720,6 +1956,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi59_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1748,6 +1988,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi60_pd: protocol@11 {
 			reg = <0x11>;
@@ -1778,6 +2022,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi61_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1807,6 +2055,10 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
+
 		scmi62_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
@@ -1835,6 +2087,10 @@
 
 		#address-cells = <1>;
 		#size-cells = <0>;
+
+		arm,max-rx-timeout-ms = <3000>;
+		arm,max-msg-size = <256>;
+		arm,max-msg = <10>;
 
 		scmi63_pd: protocol@11 {
 			reg = <0x11>;
