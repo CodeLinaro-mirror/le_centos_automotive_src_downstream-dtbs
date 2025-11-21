@@ -110,10 +110,6 @@
 	status = "disabled";
 };
 
-&usb_2_dwc3 {
-	status = "disabled";
-};
-
 &usb_2_hsphy {
 	status = "disabled";
 };

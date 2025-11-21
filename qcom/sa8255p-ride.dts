@@ -464,15 +464,12 @@
 &usb_0 {
 	power-domains = <&scmi0_pd 0>, <&scmi0_pd 1>;
 	power-domain-names = "usb_transfer", "usb_core";
+	dr_mode = "otg";
+	usb-role-switch;
 
 	/delete-property/ wakeup-source;
 
 	status = "okay";
-};
-
-&usb_0_dwc3 {
-	dr_mode = "otg";
-	usb-role-switch;
 };
 
 &usb_0_hsphy {
@@ -492,16 +489,13 @@
 &usb_1 {
 	power-domains = <&scmi1_pd 0>, <&scmi1_pd 1>;
 	power-domain-names = "usb_transfer", "usb_core";
+	dr_mode = "otg";
+	usb-role-switch;
+	role-switch-default-mode = "host";
 
 	/delete-property/ wakeup-source;
 
 	status = "okay";
-};
-
-&usb_1_dwc3 {
-	dr_mode = "otg";
-	usb-role-switch;
-	role-switch-default-mode = "host";
 };
 
 &usb_1_hsphy {
@@ -521,16 +515,13 @@
 &usb_2 {
 	power-domains = <&scmi2_pd 0>, <&scmi2_pd 1>;
 	power-domain-names = "usb_transfer", "usb_core";
+	dr_mode = "otg";
+	usb-role-switch;
+	role-switch-default-mode = "host";
 
 	/delete-property/ wakeup-source;
 
 	status = "okay";
-};
-
-&usb_2_dwc3 {
-	dr_mode = "otg";
-	usb-role-switch;
-	role-switch-default-mode = "host";
 };
 
 &usb_2_hsphy {
