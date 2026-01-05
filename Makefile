@@ -21,4 +21,9 @@ default:
 clean:
 	$(MAKE) -C $(KERNEL_SRC) M=$$PWD clean
 
+headers_install:
+	mkdir -p $(INSTALL_HDR_PATH)/usr/src/kernels/$(KERNEL_VERSION)
+	rsync -mrl --include='*/' --include='*\.h' --exclude='*' \
+		include $(INSTALL_HDR_PATH)/usr/src/kernels/$(KERNEL_VERSION)/
+
 endif
