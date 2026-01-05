@@ -7,13 +7,10 @@ else
 KERNEL_VERSION ?= $(shell uname -r)
 KERNEL_SRC ?= /lib/modules/$(KERNEL_VERSION)/build
 
-# This trick is only required for cs9 that still has dtb handled in
-# Makefile.lib and won't handle includes and local out-of-tree overrides.
-HOSTCC_FLAGS = -I $$PWD/include
 ifneq ($(LLVM),)
-HOSTCC	= clang $(HOSTCC_FLAGS)
+HOSTCC	= clang
 else
-HOSTCC	= gcc $(HOSTCC_FLAGS)
+HOSTCC	= gcc
 endif
 
 .PHONY: default clean
