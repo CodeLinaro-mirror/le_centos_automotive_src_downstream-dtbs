@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause */
+
+#ifndef __DT_BINDINGS_MAILBOX_IPCC_SAIL_H
+#define __DT_BINDINGS_MAILBOX_IPCC_SAIL_H
+
+#define IPCC_CLIENT_SAIL0		27
+#define IPCC_CLIENT_SAIL1		28
+#define IPCC_CLIENT_SAIL2		29
+#define IPCC_CLIENT_SAIL3		30
+
+#endif
