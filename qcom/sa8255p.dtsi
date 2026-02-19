@@ -1388,7 +1388,7 @@
 		};
 
 		tlmm: pinctrl@f000000 {
-			compatible = "qcom,sa8255p-tlmm";
+			compatible = "qcom,sa8255p-tlmm", "qcom,sa8775p-tlmm";
 			reg = <0x0 0x0f000000 0x0 0x1000000>;
 			interrupts = <GIC_SPI 208 IRQ_TYPE_LEVEL_HIGH>;
 			gpio-controller;
