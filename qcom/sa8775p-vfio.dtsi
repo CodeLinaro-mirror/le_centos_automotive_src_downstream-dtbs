@@ -421,19 +421,17 @@
 	cdsp0_cb@d {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0xd 0x0 0x0>;
-		iommus = <&apps_smmu 0x214D 0x4a0>,
-			<&apps_smmu 0x216D 0x4a0>,
+		iommus = <&apps_smmu 0x214D 0x420>,
+			<&apps_smmu 0x216D 0x420>,
 			<&apps_smmu 0x218D 0x400>,
-			<&apps_smmu 0x21CD 0x4a0>,
-			<&apps_smmu 0x21ED 0x4a0>,
-			<&apps_smmu 0x254D 0x4a0>,
-			<&apps_smmu 0x256D 0x4a0>,
+			<&apps_smmu 0x21ED 0x400>,
+			<&apps_smmu 0x254D 0x420>,
+			<&apps_smmu 0x256D 0x420>,
 			<&apps_smmu 0x258D 0x400>,
-			<&apps_smmu 0x25CD 0x4a0>,
-			<&apps_smmu 0x25ED 0x4a0>;
+			<&apps_smmu 0x25CD 0x0>,
+			<&apps_smmu 0x25ED 0x400>;
 		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	cdsp1_cb@1 {
@@ -1008,7 +1006,6 @@
 		qcom,iommu-vmid = <0xa>;
 		qcom,secure-context-bank;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_dpu_10@22000000 {
@@ -1029,7 +1026,6 @@
 		qcom,iommu-vmid = <0xa>;
 		qcom,secure-context-bank;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_kgsl@3d00000 {
@@ -1121,7 +1117,6 @@
 		qcom,iommu-vmid = <0xB>; /* VMID_CP_NON_PIXEL */
 		qcom,secure-context-bank;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_vidc_secure_bitstream_cb {
@@ -1131,7 +1126,6 @@
 		qcom,iommu-vmid = <0x9>; /* VMID_CP_BITSTREAM */
 		qcom,secure-context-bank;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_vidc_secure_pixel_cb {
@@ -1141,7 +1135,6 @@
 		qcom,iommu-vmid = <0xA>; /* VMID_CP_PIXEL */
 		qcom,secure-context-bank;
 		dma-coherent;
-		status = "disabled";
 	};
 
 	vfio_eva@ab00000 {
@@ -1257,7 +1250,6 @@
 		qcom,iommu-vmid = <0x9>; /*VMID_CP_BITSTREAM */
 		qcom,secure-context-bank;
 		dma-coherent;
-		status = "disabled";
 	};
 
 };
