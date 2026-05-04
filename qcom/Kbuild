@@ -1,13 +1,15 @@
 DTC_FLAGS_sa8775p_overlay += -@
 sa8775p-ride-scmi-dtbs := \
 	sa8255p-ride.dtb \
-	sa8775p_overlay.dtbo
+	sa8775p_overlay.dtbo \
+        sa8775p_audiolite_common.dtbo
 dtb-y += sa8775p-ride-scmi.dtb
 
 DTC_FLAGS_sa8775p-v3_overlay += -@
 sa8775p-ride-v3-scmi-dtbs := \
 	sa8255p-ride.dtb \
-	sa8775p-v3_overlay.dtbo
+	sa8775p-v3_overlay.dtbo \
+        sa8775p_audiolite_common.dtbo
 dtb-y += sa8775p-ride-v3-scmi.dtb
 
 DTC_FLAGS_sa8650p_overlay += -@
