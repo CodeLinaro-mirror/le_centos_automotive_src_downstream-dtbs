@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
 #include <dt-bindings/interrupt-controller/irq.h>
@@ -22,6 +22,10 @@
 	qcom,board-id = <0x10019 0>, <0x1010019 1>, <0x10025 0>, <0x1010025 1>;
 	#address-cells = <2>;
 	#size-cells = <2>;
+
+	chosen {
+		bootargs = "pd_ignore_unused";
+	};
 
 	kaslr_store {
 		compatible = "qcom,kaslr-off-store";
@@ -87,25 +91,35 @@
 			size = <0 0x3000000>;
 		};
 
-		tz-start-count {
+		tz_start_count: tz_start_count@146d87f8 {
 			reg = <0x0 0x146d87f8 0x0 0x8>;
 			no-map;
 		};
 
-		tz-end-count {
+		tz_end_count: tz_end_count@146d87dc {
 			reg = <0x0 0x146d87dc 0x0 0x8>;
 			no-map;
 		};
 
-		gptp_timedata_mem: gptp_timedata_region@acfff000 {
+		gptp_timedata_mem: gptp_timedata_region@ac5fe000 {
 			no-map;
-			reg = <0x0 0xacfff000 0x0 0x1000>;
+			reg = <0x0 0xac5fe000 0x0 0x2000>;
 		};
 
 		non_ecc_heap_mem: non_ecc_heap_mem_region {
 			reg = <0x9 0xC0000000 0x1 0x80000000>;
 			no-map;
 		};
+	};
+
+	tz_start_count {
+		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
+		memory-region = <&tz_start_count>;
+	};
+
+	tz_end_count {
+		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
+		memory-region = <&tz_end_count>;
 	};
 };
 
@@ -631,6 +645,51 @@
 		status = "ok";
 	};
 
+	adreno_smmu_fusa {
+		compatible = "qcom,smmu500-tbu-fusa";
+		reg = <0x0 0x3da8000 0x0 0x20>,
+		      <0x0 0x3dc8000 0x0 0x18000>;
+		reg-name = "smmu_fusa_base", "client_fusa_base";
+		qcom,client_offset = <0x8000>;
+		interrupts = <GIC_SPI 769 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 818 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 819 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	apps_smmu_fusa {
+		compatible = "qcom,smmu500-tbu-fusa";
+		reg = <0x0 0x15008000 0x0 0x20>,
+		      <0x0 0x15180000 0x0 0x80000>;
+		reg-name = "smmu_fusa_base", "client_fusa_base";
+		qcom,client_offset = <0x8000>;
+		interrupts = <GIC_SPI 779 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 453 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 458 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 717 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 718 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 662 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 667 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 671 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 716 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 762 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 767 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 829 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 466 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 461 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 464 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	pcie_smmu_fusa {
+		compatible = "qcom,smmu500-tbu-fusa";
+		reg = <0x0 0x15208000 0x0 0x20>,
+		      <0x0 0x152f0000 0x0 0x10000>;
+		reg-name = "smmu_fusa_base", "client_fusa_base";
+		qcom,client_offset = <0x8000>;
+		interrupts = <GIC_SPI 652 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 645 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
 	kryo_erp: erp {
 	compatible = "arm,arm64-kryo-cpu-erp";
 	interrupts = <GIC_PPI 0 IRQ_TYPE_LEVEL_LOW>,
@@ -642,7 +701,20 @@
 	};
 
 	ddr_bwprofiler {
-			compatible = "qcom,ddr_bwprofiler";
+			compatible = "qcom,sa8255_ddr_bwprofiler";
+			reg = <0x0 0x9200000 0x0 0x100000>,
+			      <0x0 0x9300000 0x0 0x100000>,
+			      <0x0 0x9400000 0x0 0x100000>,
+			      <0x0 0x9500000 0x0 0x100000>,
+			      <0x0 0x9600000 0x0 0x100000>,
+			      <0x0 0x9700000 0x0 0x100000>,
+			      <0x0 0x9152000 0x0 0x001000>,
+			      <0x0 0x9153000 0x0 0x001000>,
+			      <0x0 0x9154000 0x0 0x001000>,
+			      <0x0 0x9155000 0x0 0x001000>,
+			      <0x0 0x9156000 0x0 0x001000>,
+			      <0x0 0x9157000 0x0 0x001000>,
+			      <0x0 0x17A0000 0x0 0x040000>;
 	};
 
 	scmi_mdss0 {
@@ -812,69 +884,6 @@
 		qcom,dev-name = "test_scmi_power";
 	};
 
-	scmi_uart17 {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
-		power-domain-names = "power", "perf";
-
-		qcom,dev-name = "scmi_uart17";
-	};
-
-	scmi_pcie0 {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi5_pd 0>, <&scmi63_pd 0>;
-		power-domain-names = "power", "dummy";
-
-		qcom,dev-name = "scmi_pcie0";
-	};
-
-	scmi_wlan {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
-		power-domain-names = "power_regulator", "power_gpio";
-
-		qcom,dev-name = "scmi_wlan";
-	};
-
-	scmi_bluetooth {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi25_pd 0>;
-		power-domain-names = "power";
-
-		qcom,dev-name = "scmi_bluetooth";
-	};
-
-	scmi_emac1 {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi37_pd 0>;
-		power-domain-names = "gvm_power_mdio";
-
-		qcom,dev-name = "scmi_emac1";
-	};
-
-	scmi_usb2 {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi2_pd 0>, <&scmi2_pd 1>;
-		power-domain-names = "usb_transfer", "usb_core";
-
-		qcom,dev-name = "scmi_usb2";
-	};
-
-	scmi_usb2_phy2 {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi14_pd 0>, <&scmi14_pd 1>;
-		power-domain-names = "usb_transfer", "usb_core";
-
-		qcom,dev-name = "scmi_usb2_phy2";
-	};
-
 	qfprom_pte: qfprom@780158 {
 		compatible = "qcom,sm8450-qfprom";
 		reg = <0x0 0x00780158 0x0 0x4>;
@@ -903,5 +912,61 @@
 	qcom,secure-buffer {
 		compatible = "qcom,secure-buffer";
 	};
+
+	tlmm_fusa {
+		compatible = "qcom,tlmm-fusa";
+		interrupts = <GIC_SPI 445 IRQ_TYPE_EDGE_RISING>;
+		reg = <0x0 0xf1b3000 0x0 0x2>,
+		      <0x0 0xf1bb000 0x0 0x4>,
+		      <0x0 0xf1bb008 0x0 0x4>;
+		reg-names = "error_status", "ahb_hreset_status", "por_ares_status";
+		qcom,por-ares-reset-bit = <2>;
+	};
 };
 
+&tlmm {
+	ethernet0_default: ethernet0-default-state {
+		ethernet0_mdc: ethernet0-mdc-pins {
+			pins = "gpio8";
+			function = "emac0_mdc";
+			drive-strength = <16>;
+			bias-pull-up;
+		};
+
+		ethernet0_mdio: ethernet0-mdio-pins {
+			pins = "gpio9";
+			function = "emac0_mdio";
+			drive-strength = <16>;
+			bias-pull-up;
+		};
+
+		ethernet0_pps_o_0: ethernet0-pps-o-0-pins {
+			pins = "gpio6";
+			function = "emac0_ptp_pps";
+			output-enable;
+		};
+
+		ethernet0_pps_o_1: ethernet0-pps-o-1-pins {
+			pins = "gpio10";
+			function = "emac0_ptp_pps";
+			output-enable;
+		};
+
+		ethernet0_pps_o_2: ethernet0-pps-o-2-pins {
+			pins = "gpio11";
+			function = "emac0_ptp_pps";
+			output-enable;
+		};
+
+		ethernet0_pps_o_3: ethernet0-pps-o-3-pins {
+			pins = "gpio12";
+			function = "emac0_ptp_pps";
+			output-enable;
+		};
+	};
+};
+
+&ethernet0 {
+	pinctrl-0 = <&ethernet0_default>;
+	pinctrl-names = "default";
+};
