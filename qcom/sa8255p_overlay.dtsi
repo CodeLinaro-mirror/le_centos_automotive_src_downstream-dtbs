@@ -107,7 +107,7 @@
 		};
 
 		non_ecc_heap_mem: non_ecc_heap_mem_region {
-			reg = <0x9 0xC0000000 0x1 0x80000000>;
+			reg = <0x3 0x00000000 0x0 0x80000000>;
 			no-map;
 		};
 	};
@@ -125,14 +125,6 @@
 
 &ipcc1 {
 	status = "okay";
-};
-
-&usb_2 {
-	status = "disabled";
-};
-
-&usb_2_hsphy {
-	status = "disabled";
 };
 
 &spi16 {
@@ -921,6 +913,13 @@
 		      <0x0 0xf1bb008 0x0 0x4>;
 		reg-names = "error_status", "ahb_hreset_status", "por_ares_status";
 		qcom,por-ares-reset-bit = <2>;
+	};
+
+	qcom_l3_cache_config: qcom_l3_cache_config@0 {
+		compatible = "qcom,l3-cache-config";
+		status = "okay";
+		nr_clusters = <2>;
+		nr_cpus = <4>;
 	};
 };
 
